@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-route
 import Homepage from "./components/Homepage";
 import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
-import ForgotPassword from "./components/auth/FogetPass.js";
 import BookDetail from "./components/BookDetail.js";
 import HeaderV2 from "./components/HeaderV2.js";
 import BorrowHistory from "./components/BorrowHistory.js";
@@ -50,7 +49,6 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route path="/" element={<ProtectedRoute><Homepage /></ProtectedRoute>} />
           <Route path="/homepage" element={<ProtectedRoute><Homepage /></ProtectedRoute>} />

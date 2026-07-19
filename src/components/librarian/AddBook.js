@@ -119,109 +119,7 @@ export default function AddBook() {
         return true;
     }
 
-    const handleImport = async () => {
-        try {
-            let editionKey;
-            const isOLID = importCode.toUpperCase().startsWith("OL") && importCode.toUpperCase().endsWith("M");
-
-            if (isOLID) {
-                editionKey = `/books/${importCode}`;
-            } else {
-                const isbnRes = await axios.get(`https://openlibrary.org/isbn/${importCode}.json`);
-                editionKey = isbnRes.data?.key;
-            }
-
-            if (!editionKey) {
-                console.error("Could not find a book edition for:", importCode);
-                return;
-            }
-
-            const olidValue = editionKey.replace("/books/", "");
-            const editionRes = await axios.get(`https://openlibrary.org${editionKey}.json`);
-            const edition = editionRes.data || {};
-
-            let work = null;
-            const workKey = Array.isArray(edition.works) && edition.works[0]?.key;
-            if (workKey) {
-                const workRes = await axios.get(`https://openlibrary.org${workKey}.json`);
-                work = workRes.data || null;
-            }
-
-            setOLID(olidValue);
-            if (isOLID) {
-                const foundIsbn = edition.isbn_13?.[0] || edition.isbn_10?.[0] || "";
-                setbookISBN(foundIsbn);
-            } else {
-                setbookISBN(importCode);
-            }
-
-            const titleVal = edition.title || work?.title || "";
-            setTitle(titleVal);
-
-            const rawDesc = edition.description ?? work?.description ?? "";
-            let descVal = "";
-            if (typeof rawDesc === "string") {
-                descVal = rawDesc;
-            } else if (rawDesc?.value) {
-                descVal = rawDesc.value;
-            }
-            setDescription(descVal);
-
-            const coverId = edition.covers?.[0] || work?.covers?.[0];
-            let imageUrl = "";
-
-            if (coverId) {
-                imageUrl = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
-            } else if (olidValue) {
-                imageUrl = `https://covers.openlibrary.org/b/olid/${olidValue}-L.jpg`;
-            }
-
-            if (imageUrl) {
-                fetch(imageUrl)
-                    .then(res => res.blob())
-                    .then(blob => {
-                        const reader = new FileReader();
-                        reader.onloadend = () => {
-                            setImage(reader.result);
-                        };
-                        reader.readAsDataURL(blob);
-                    })
-                    .catch(err => {
-                        console.error("Error fetching image:", err);
-                    });
-            } else {
-                setImage("");
-            }
-
-
-            const authorRefs =
-                edition.authors?.map((a) => a.key) ??
-                work?.authors?.map((a) => a.author?.key || a.key) ??
-                [];
-
-            const uniqueAuthorRefs = Array.from(new Set(authorRefs.filter(Boolean)));
-
-            if (uniqueAuthorRefs.length > 0) {
-                const namePromises = uniqueAuthorRefs.map(async (aKey) => {
-                    try {
-                        const aRes = await axios.get(`https://openlibrary.org${aKey}.json`);
-                        return aRes.data?.name || null;
-                    } catch (e) {
-                        return null;
-                    }
-                });
-
-                const names = (await Promise.all(namePromises)).filter(Boolean);
-                setAuthor(names.join(", "));
-            } else {
-                setAuthor("");
-            }
-
-            console.log("Imported:", { titleVal, olidValue, imageUrl });
-        } catch (err) {
-            console.error("Error importing book:", err);
-        }
-    };
+   
 
     return (
         <div className="librarian-page-container">
@@ -232,16 +130,6 @@ export default function AddBook() {
                 </div>
                 <div>
                     <button onClick={() => navigate('/librarian/book_list')}>Back to Book List</button>
-                </div>
-            </div>
-            <div className="p-5">
-                <div className="import-container">
-                    <h3 className="import-header mb-4"><i className="fa-solid fa-file-import"></i> Import Book Data</h3>
-                    <div className="import-desc">Enter an bookISBN or OLID to automatically fetch book details</div>
-                    <div className="d-flex gap-3">
-                        <input value={importCode} onChange={e => setImportCode(e.target.value)} className="form-control" placeholder="Enter bookISBN or OLID"></input>
-                        <button onClick={() => handleImport()} className="import-button"><i className="fa-solid fa-download"></i> Import</button>
-                    </div>
                 </div>
             </div>
             <div className="form-buttons d-flex justify-content-end gap-3">

@@ -75,13 +75,7 @@ export default function Login() {
                                 <div className="text-center login-link">
                                     Bạn chưa có tài khoản? <Link to={`/register`} className="login-link-text">Tạo tài khoản</Link>
                                 </div>
-                            </Col>
-
-                            <Col>
-                                <div className="text-center login-link">
-                                    <Link to={`/forgot-password`} className="login-link-text">Quên mật khẩu?</Link>
-                                </div>
-                            </Col>
+                            </Col>  
 
                         </Row>
 
