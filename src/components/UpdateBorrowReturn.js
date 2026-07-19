@@ -7,18 +7,17 @@ export default function UpdateBorrowReturn() {
   const [borrows, setBorrows] = useState([]);
   const [copies, setCopies] = useState([]);
   const [books, setBooks] = useState([]);
-  const [users, setUsers] = useState([]); 
+  const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ bookId: "", studentId: "", days: 14 });
 
   useEffect(() => {
     (async () => {
       try {
-        const [bh, cp, bk, us] = await Promise.all([
-          axios.get("http://localhost:9999/borrowHistory"),
-          axios.get("http://localhost:9999/copies"),
-          axios.get("http://localhost:9999/books"),
-          axios.get("http://localhost:9999/users"), 
-        ]);
+        const bh = await axios.get("http://localhost:9999/borrowHistory");
+        const cp = await axios.get("http://localhost:9999/copies");
+        const bk = await axios.get("http://localhost:9999/books");
+        const us = await axios.get("http://localhost:9999/users");
+
         setBorrows(bh.data || []);
         setCopies(cp.data || []);
         setBooks(bk.data || []);
@@ -31,7 +30,7 @@ export default function UpdateBorrowReturn() {
 
   const calcLateDays = (dueDate, returnDate = new Date()) => {
     const late = Math.ceil(
-      (returnDate - new Date(dueDate)) / (1000 * 60 * 60 * 24)
+      (returnDate - new Date(dueDate)) / (1000 * 60 * 60 * 24),
     );
     return Math.max(0, late);
   };
@@ -42,7 +41,7 @@ export default function UpdateBorrowReturn() {
     if (!bookId || !studentId) return;
 
     const student = users.find(
-      (u) => u.id === studentId && u.role.toLowerCase() === "student"
+      (u) => u.id === studentId && u.role.toLowerCase() === "student",
     );
     if (!student) {
       alert("Student does not exist");
@@ -50,7 +49,7 @@ export default function UpdateBorrowReturn() {
     }
 
     const availableCopy = copies.find(
-      (c) => c.bookId === bookId && !c.isBorrowed && c.condition === "Good"
+      (c) => c.bookId === bookId && !c.isBorrowed && c.condition === "Good",
     );
     if (!availableCopy) {
       alert("No available copies left for this book!");
@@ -79,8 +78,8 @@ export default function UpdateBorrowReturn() {
       setBorrows([borrow, ...borrows]);
       setCopies(
         copies.map((c) =>
-          c.id === availableCopy.id ? { ...c, isBorrowed: true } : c
-        )
+          c.id === availableCopy.id ? { ...c, isBorrowed: true } : c,
+        ),
       );
       setForm({ bookId: "", studentId: "", days: 14 });
     } catch (err) {
@@ -92,7 +91,7 @@ export default function UpdateBorrowReturn() {
     if (borrow.returnDate) return;
 
     const confirmReturn = window.confirm(
-      `Confirmation of return of books to Student ${borrow.studentId}?`
+      `Confirmation of return of books to Student ${borrow.studentId}?`,
     );
     if (!confirmReturn) return;
 
@@ -108,13 +107,13 @@ export default function UpdateBorrowReturn() {
 
       setBorrows(
         borrows.map((b) =>
-          b.id === borrow.id ? { ...b, returnDate: retDate } : b
-        )
+          b.id === borrow.id ? { ...b, returnDate: retDate } : b,
+        ),
       );
       setCopies(
         copies.map((c) =>
-          c.id === borrow.copyId ? { ...c, isBorrowed: false } : c
-        )
+          c.id === borrow.copyId ? { ...c, isBorrowed: false } : c,
+        ),
       );
     } catch (err) {
       console.log("Return error", err);
@@ -123,12 +122,12 @@ export default function UpdateBorrowReturn() {
 
   const activeBorrows = borrows
     .filter((b) => !b.returnDate)
-    .sort((a, b) => new Date(b.borrowDate) < new Date(a.borrowDate) ? 1 : -1);
+    .sort((a, b) => (new Date(b.borrowDate) < new Date(a.borrowDate) ? 1 : -1));
 
   const bookWithAvailableCopies = books
     .map((bk) => {
       const remaining = copies.filter(
-        (c) => c.bookId === bk.id && !c.isBorrowed && c.condition === "Good"
+        (c) => c.bookId === bk.id && !c.isBorrowed && c.condition === "Good",
       ).length;
       return { ...bk, remaining };
     })
