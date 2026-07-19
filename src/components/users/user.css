@@ -5,10 +5,11 @@
   max-width: 900px;
   padding: 30px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #FFFFFF, #F4F2FF);
+  box-shadow: 0 16px 40px rgba(46, 42, 120, 0.14);
   font-family: "Poppins", sans-serif;
   animation: fadeIn 0.6s ease-in-out;
+  border: 1px solid #EFEDFB;
 }
 
 
@@ -40,7 +41,7 @@
   border-radius: 100%;
   object-fit: cover;
   border: 5px solid #fff;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 24px rgba(46, 42, 120, 0.2);
 }
 
 
@@ -48,17 +49,17 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+  background: linear-gradient(135deg, #5B4EE5, #FF7A59);
   border-radius: 50%;
   padding: 10px;
   color: white;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(46, 42, 120, 0.25);
 }
 
 .camera-icon:hover {
-  background: linear-gradient(135deg, #0056b3, #0099cc);
+  background: linear-gradient(135deg, #4235B8, #E8623F);
   transform: scale(1.1);
 }
 
@@ -66,7 +67,7 @@
   width: 50px;
   height: 26px;
   border-radius: 13px;
-  background-color: #ccc;
+  background-color: #D9D4F8;
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -85,7 +86,7 @@
 
 
 .status-toggle.active {
-  background-color: #28a745;
+  background-color: #16A672;
 }
 .status-toggle.active .toggle-circle {
   transform: translateX(24px);
@@ -93,7 +94,7 @@
 
 
 .status-toggle.inactive {
-  background-color: #6c757d;
+  background-color: #9A94BE;
 }
 .status-toggle.inactive .toggle-circle {
   transform: translateX(0);
@@ -109,7 +110,7 @@
   padding-left: 18px;
 }
 .required {
-  color: red;
+  color: #EF4467;
 }
 
 
@@ -123,43 +124,43 @@
 .button-group .btn {
   padding: 10px 20px;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 999px;
   transition: all 0.3s ease;
 }
 
 .button-group .btn-success {
-  background: linear-gradient(135deg, #28a745, #56d679);
+  background: linear-gradient(135deg, #16A672, #34C98F);
   border: none;
 }
 
 .button-group .btn-success:hover {
-  background: linear-gradient(135deg, #218838, #45c76b);
+  background: linear-gradient(135deg, #128A5E, #2AB07E);
   transform: translateY(-2px);
 }
 
 .button-group .btn-secondary {
-  background: linear-gradient(135deg, #6c757d, #adb5bd);
+  background: linear-gradient(135deg, #756F94, #9A94BE);
   border: none;
 }
 
 .button-group .btn-secondary:hover {
-  background: linear-gradient(135deg, #495057, #868e96);
+  background: linear-gradient(135deg, #5C5678, #837DAE);
   transform: translateY(-2px);
 }
 
 form label {
   font-weight: 600;
-  color: #333;
+  color: #322C5C;
 }
 
 form input[readonly] {
-  background-color: #f1f3f5;
-  border: 1px solid #dee2e6;
+  background-color: #F9F8FE;
+  border: 1px solid #E7E4F7;
 }
 
 
 .required {
-  color: red;
+  color: #EF4467;
   font-weight: bold;
 }
 
@@ -167,12 +168,12 @@ form input[readonly] {
 .profile-note {
   margin: 20px;
   padding: 15px;
-  background: #f8f9fa;
-  border-left: 4px solid #007bff;
-  border-radius: 8px;
+  background: #F4F2FF;
+  border-left: 4px solid #5B4EE5;
+  border-radius: 10px;
   text-align: left;
   font-size: 14px;
-  color: #444;
+  color: #4B4670;
   animation: fadeIn 0.5s ease;
 }
 

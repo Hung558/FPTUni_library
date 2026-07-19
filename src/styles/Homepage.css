@@ -4,6 +4,7 @@
     gap: 1.25rem;
     padding: 2.5rem;
     width: 100vw;
+    background-color: #F6F5FC;
 }
 
 @media (min-width: 768px) {
@@ -21,16 +22,19 @@
 }
 
 .welcome-banner {
-    background-image: linear-gradient(to right, #3b82f6, #16a34a);
+    background-image: linear-gradient(120deg, #5B4EE5 0%, #7A6DF0 45%, #FF7A59 100%);
+    border-radius: 20px;
+    box-shadow: 0 16px 34px rgba(46, 42, 120, 0.22);
 }
 
 .welcome-banner-subtitle {
-    color: #bfdbfe;
+    color: #EEECFF;
 }
 
 .book-count-badge {
-    background-color: rgba(245, 245, 245, 0.3);
+    background-color: rgba(255, 255, 255, 0.22);
     width: fit-content;
+    border-radius: 999px;
 }
 
 .search-input-wrapper,
@@ -41,30 +45,30 @@
 
 .selector-close-button,
 .selector-reset-button {
-    border-radius: 6px;
-    padding: 6px 12px;
+    border-radius: 999px;
+    padding: 6px 14px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
 }
 
 .selector-close-button {
-    background-color: #f87171;
+    background-color: #EF4467;
     color: white;
 }
 
 .selector-close-button:hover {
-    background-color: #ef4444;
+    background-color: #D62E52;
     transform: scale(1.05);
 }
 
 .selector-reset-button {
-    background-color: #60a5fa;
+    background-color: #5B4EE5;
     color: white;
 }
 
 .selector-reset-button:hover {
-    background-color: #3b82f6;
+    background-color: #4235B8;
     transform: scale(1.05);
 }
 
@@ -85,9 +89,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #bfdbfe;
-    border-radius: 5px;
-    padding: 3px;
+    border: 1px solid #D9D4F8;
+    border-radius: 999px;
+    padding: 4px 10px;
     width: fit-content;
     cursor: pointer;
     user-select: none;
@@ -95,11 +99,11 @@
 }
 
 .subjects-container .subject.inactive:hover {
-    border: 1px solid blue;
+    border: 1px solid #5B4EE5;
 }
 
 .subjects-container .subject.active:hover {
-    background-color: #ef4444;
+    background-color: #EF4467;
 }
 
 .subject.display {
@@ -113,8 +117,9 @@
 }
 
 .subjects-container .subject.active {
-    background-color: #3b82f6;
+    background-color: #5B4EE5;
     color: white;
+    border-color: #5B4EE5;
 }
 
 .search-input-wrapper button i {
@@ -123,18 +128,28 @@
 }
 
 .search-input-wrapper button i:hover {
-    color: #60a5fa !important;
+    color: #FF7A59 !important;
     transform: scale(1.2);
 }
 
 .active-outline {
-    outline: 2px solid #60a5fa;
+    outline: 2px solid #FF7A59;
     outline-offset: 1px;
-    border-color: #60a5fa !important;
+    border-color: #FF7A59 !important;
 }
 
 .book-card {
-    border: 1px solid #dee2e6;
+    border: 1px solid #E7E4F7;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: #FFFFFF;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(46, 42, 120, 0.14);
+    border-color: #C9C4F5;
 }
 
 .book-card-title {
@@ -157,22 +172,23 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
     font-size: 0.875rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    box-shadow: 0 2px 6px rgba(46, 42, 120, 0.12);
 }
 
 .status-badge.available {
-    background-color: #f0fdf4;
-    color: #22c55e;
+    background-color: #E7F9F1;
+    color: #16A672;
 }
 
 .status-badge.unavailable {
-    background-color: #fef2f2;
-    color: #ef4444;
+    background-color: #FDE9EE;
+    color: #EF4467;
 }
 
 .form-select {
@@ -182,8 +198,9 @@
 .pagination-bar {
     display: flex;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 12px;
     width: fit-content;
+    overflow: hidden;
 }
 
 .left-arrow-container,
@@ -193,7 +210,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-weight: 400;
+    font-weight: 500;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 10px;
@@ -201,26 +218,27 @@
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: fit-content;
-    border: 1px solid rgb(186, 186, 186);
+    border: 1px solid #E7E4F7;
     user-select: none;
+    background-color: #FFFFFF;
 
 }
 
 .left-arrow-container:hover,
 .right-arrow-container:hover,
 .pagination-page:hover {
-    background-color: #dee2e6;
-    color: #60a5fa;
+    background-color: #EEECFF;
+    color: #5B4EE5;
 }
 
 .left-arrow-container {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .right-arrow-container {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .pagination-page {
@@ -229,8 +247,9 @@
 }
 
 .pagination-page.active {
-    color: #60a5fa;
-    background-color: #dee2e6;
+    color: white;
+    background-color: #5B4EE5;
+    border-color: #5B4EE5;
 }
 
 .pagination-page.etc {
@@ -239,9 +258,9 @@
 
 .left-arrow-container .left-arrow,
 .right-arrow-container .right-arrow {
-    border: 1.5px solid #60a5fa;
+    border: 1.5px solid #5B4EE5;
     border-radius: 50%;
-    color: #60a5fa;
+    color: #5B4EE5;
     padding: 5px;
     width: 15px;
     height: 15px;
@@ -258,9 +277,9 @@
 }
 
 .status-icon.good{
-    background-color: green;
+    background-color: #16A672;
 }
 
 .status-icon.out{
-    background-color: red;
+    background-color: #EF4467;
 }

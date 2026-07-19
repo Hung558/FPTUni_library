@@ -1,0 +1,118 @@
+/* ============================================================
+   Global design system — eFPT Library
+   New visual identity: indigo/violet primary + coral accent,
+   replacing the old brown/beige + slate-blue mismatched palette.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand */
+  --color-primary: #5B4EE5;
+  --color-primary-dark: #4235B8;
+  --color-primary-darker: #2E2A78;
+  --color-primary-light: #EEECFF;
+  --color-primary-soft: #F4F2FF;
+
+  --color-accent: #FF7A59;
+  --color-accent-dark: #E8623F;
+  --color-accent-light: #FFE7DF;
+
+  /* Feedback */
+  --color-success: #16A672;
+  --color-success-bg: #E7F9F1;
+  --color-warning: #F5A623;
+  --color-warning-bg: #FFF4E0;
+  --color-danger: #EF4467;
+  --color-danger-bg: #FDE9EE;
+  --color-info: #2FA8DA;
+  --color-info-bg: #E8F6FC;
+
+  /* Neutrals */
+  --color-bg: #F6F5FC;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FBFAFF;
+  --color-border: #E7E4F7;
+  --color-text: #211D45;
+  --color-text-muted: #756F94;
+  --color-text-inverse: #FFFFFF;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(46, 42, 120, 0.06);
+  --shadow-md: 0 10px 28px rgba(46, 42, 120, 0.10);
+  --shadow-lg: 0 20px 48px rgba(46, 42, 120, 0.16);
+
+  /* Typography */
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --transition-base: 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Accessible focus ring for keyboard users across the whole app */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-darker);
+}
+
+/* Custom scrollbar — consistent with brand, still usable on all browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Respect users who prefer reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,24 +1,26 @@
 .book-manage-hero {
-    color: white;
-    background: linear-gradient(to right, #2C3E50, #496390);
-    border-radius: 10px;
+    color: #211D45;
+    background: linear-gradient(120deg, #EEECFF, #F4F2FF 60%, #FFE7DF);
+    border: 1px solid #E7E4F7;
+    border-radius: 16px;
     padding: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 6px 18px rgba(46, 42, 120, 0.08);
 }
 
 .book-manage-hero button {
-    background-color: rgba(250, 250, 250, 0.4);
-    border: navajowhite;
-    border-radius: 5px;
-    color: white;
+    background-color: rgba(91, 78, 229, 0.12);
+    border: none;
+    border-radius: 8px;
+    color: #4235B8;
     padding: 4px;
     transition: background-color 0.3s ease;
 }
 
 .book-manage-hero button:hover {
-    background-color: rgba(210, 210, 210, 0.4);
+    background-color: rgba(91, 78, 229, 0.22);
 }
 
 .book-manage-title {
@@ -38,7 +40,7 @@
 .librarian-form-container {
     display: flex;
     justify-content: space-between;
-    color: #2C3E50;
+    color: #211D45;
     padding: 50px;
     gap: 15px;
 }
@@ -64,62 +66,65 @@
 
 .book-form-display-image {
     width: 100%;
+    border-radius: 10px;
 }
 
 .form-buttons button {
     border: none;
-    padding: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    border-radius: 5px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .cancel-button {
-    background-color: #DEDEDE;
+    background-color: #EEECFF;
+    color: #4235B8;
     transition: background-color 0.3s ease;
 }
 
 .cancel-button:hover {
-    background-color: #D0D0D0;
+    background-color: #D9D4F8;
 }
 
 .save-button {
-    background: #4CAF50;
+    background: #16A672;
     color: white;
     transition: background-color 0.3s ease;
 }
 
 .save-button:hover {
-    background: #388E3C;
+    background: #128A5E;
 }
 
 .import-container {
-    background-color: #F8F9FA;
-    border-radius: 10px;
+    background-color: #F4F2FF;
+    border-radius: 14px;
     padding: 26px;
 }
 
 .import-header {
-    color: #2C3E50;
+    color: #211D45;
 }
 
 .import-desc {
     font-size: 0.9rem;
-    color: #7F8C8D;
+    color: #756F94;
 }
 
 .import-button {
     min-width: fit-content;
     width: 120px;
     border: none;
-    background-color: #496390;
+    background-color: #5B4EE5;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .import-button:hover {
-    background-color: #2C3E50;
+    background-color: #4235B8;
 }
 
 .toggle-slider {
@@ -130,12 +135,12 @@
 }
 
 .toggle-slider.active {
-    background-color: #4CAF50;
+    background-color: #16A672;
     position: relative;
 }
 
 .toggle-slider.inactive {
-    background-color: gray;
+    background-color: #B7B2D6;
     position: relative;
 }
 

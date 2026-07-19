@@ -3,18 +3,19 @@
     flex-direction: column;
     gap: 1.25rem;
     padding: 2.5rem;
-    background-color: #EDEFF2;
+    background-color: #F6F5FC;
     flex: 1;
     min-height: 0;
 }
 
 .book-detail-container {
     background-color: white;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    box-shadow: 0 10px 28px rgba(46, 42, 120, 0.10);
 }
 
 .image-container {
@@ -25,15 +26,18 @@
 }
 
 .image-container img {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(46, 42, 120, 0.25);
+    border-radius: 10px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
 }
 
 .title-text {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+    color: #211D45;
 }
 
 .author-text {
@@ -44,17 +48,17 @@
 }
 
 .author-icon {
-    color: #FF6B6B;
+    color: #FF7A59;
 }
 
 .author-name {
-    color: #4A6491;
+    color: #5B4EE5;
     font-weight: 500;
 }
 
 .availability-box {
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -62,67 +66,70 @@
 }
 
 .availability-box.available {
-    background-color: #f0fdf4;
-    border: 2px solid #BAF6CF;
+    background-color: #E7F9F1;
+    border: 2px solid #BEEEDA;
 }
 
 .availability-box.unavailable {
-    background-color: #fef2f2;
-    border: 2px solid #e65959;
+    background-color: #FDE9EE;
+    border: 2px solid #F5C1CE;
 }
 
 .available-text {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
 .bi.available {
-    -webkit-text-stroke: 1px #1EA650;
+    -webkit-text-stroke: 1px #16A672;
 }
 
 .bi.unavailable {
-    -webkit-text-stroke: 1px #e65959;
+    -webkit-text-stroke: 1px #EF4467;
 }
 
 .available-text.available {
-    color: #1EA650;
+    color: #16A672;
 }
 
 .available-text.unavailable {
-    color: #ef4444;
+    color: #EF4467;
 }
 
 .availability-text {
     font-size: 0.9rem;
+    color: #4B4670;
 }
 
 .status-badge.available {
-    background-color: #f0fdf4;
-    color: #22c55e;
+    background-color: #E7F9F1;
+    color: #16A672;
 }
 
 .status-badge.unavailable {
-    background-color: #fef2f2;
-    color: #ef4444;
+    background-color: #FDE9EE;
+    color: #EF4467;
 }
 
 .little-detail-container {
     display: flex;
     gap: 10px;
-    color: #4A6491;
+    color: #5B4EE5;
+    flex-wrap: wrap;
 }
 
 .little-detail {
-    background-color: #EDEFF2;
-    border-radius: 5px;
+    background-color: #F4F2FF;
+    border-radius: 10px;
     padding: 15px;
 }
 
 .little-detail a {
-    color: #4A6491;
+    color: #5B4EE5;
+    font-weight: 500;
 }
 
 .little-detail.link {
@@ -130,11 +137,13 @@
 }
 
 .little-detail.link:hover {
-    transform: scale(1.1);
+    transform: scale(1.06);
+    background-color: #EEECFF;
 }
 
 .description-header {
     font-size: 1.5rem;
+    color: #211D45;
 }
 
 @media (min-width: 768px) {

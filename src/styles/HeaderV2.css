@@ -1,17 +1,18 @@
 :root {
-    --tw-border-color: #e5e7eb;
-    --tw-blue-500: #3b82f6;
-    --tw-neutral-50: #f9fafb;
-    --tw-red-600: #dc2626;
+    --tw-border-color: #E7E4F7;
+    --tw-blue-500: #5B4EE5;
+    --tw-neutral-50: #F6F5FC;
+    --tw-red-600: #EF4467;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 2.5rem;
+    padding: 0.6rem 2.5rem;
     flex-direction: column;
-    box-shadow: 0px 1.5px 3px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to right, #2C3E50, #4A6491);
+    box-shadow: 0 2px 12px rgba(46, 42, 120, 0.08);
+    background: #FFFFFF;
+    border-bottom: 1px solid #EFEDFB;
 }
 
 .header-brand,
@@ -40,24 +41,26 @@
 }
 
 .header-brand-icon-wrapper {
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.25rem;
+    background: #FFE7DF;
 }
 
 .header-brand-icon {
-    font-size: 3rem;
+    font-size: 2.6rem;
     line-height: 2rem;
-    color: #FF6B6B;
+    color: #FF7A59;
 }
 
 .header-brand-text {
-    color: white;
+    color: #211D45;
     margin-left: 10px;
+    font-family: "Poppins", sans-serif;
 }
 
 .header-title {
@@ -67,11 +70,11 @@
 }
 
 .header-user-info {
-    color: white;
+    color: #322C5C;
 }
 
 .header-user-info:hover {
-    color: cadetblue;
+    color: #FF7A59;
 }
 
 .header-user-name,
@@ -81,13 +84,22 @@
     text-align: start;
 }
 
+.header-title {
+    color: #211D45;
+}
+
+.header-subtitle {
+    color: #756F94;
+    font-size: 0.85rem;
+}
+
 .header-history {
-    color: white;
+    color: #322C5C;
     display: none;
 }
 
 .header-history:hover {
-    color: cadetblue;
+    color: #FF7A59;
 }
 
 .header-user-avatar {
@@ -97,12 +109,13 @@
 
 .header-user-name {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .header-user-role {
     font-size: 0.875rem;
     line-height: 1.25rem;
+    color: #756F94;
 }
 
 .header-logout,
@@ -124,16 +137,27 @@
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
+    transition: all 0.25s ease;
 }
 
 .header-logout {
-    background-color: #D63C3C;
-    border: 1px solid #EC5455;
+    background-color: #EF4467;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.header-logout:hover {
+    background-color: #D62E52;
+    transform: translateY(-1px);
 }
 
 .header-login {
-    background-color: #61BFC1;
-    border: 1px solid #4FAAAF;
+    background-color: #16A672;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.header-login:hover {
+    background-color: #128A5E;
+    transform: translateY(-1px);
 }
 
 .logout-icon,

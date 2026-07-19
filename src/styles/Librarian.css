@@ -1,16 +1,20 @@
 .librarian-dashboard-sidebar {
-    background-color: #2C3E50;
+    background: #FFFFFF;
     height: 100vh;
     position: fixed;
     width: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: #322C5C;
+    border-right: 1px solid #EFEDFB;
+    box-shadow: 2px 0 16px rgba(46, 42, 120, 0.06);
 }
 
 .librarian-dashboard {
     margin-left: 270px;
+    background-color: #F6F5FC;
+    min-height: 100vh;
 }
 
 .dashboard-logo {
@@ -18,11 +22,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    gap: 5px;
+    padding: 14px;
+    gap: 8px;
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #EFEDFB;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    color: #5B4EE5;
 }
 
 .nav-container {
@@ -34,26 +40,28 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    color: white;
-    font-size: 1.2rem;
-    gap: 5px;
-    padding: 15px;
+    color: #4B4670;
+    font-size: 1.05rem;
+    gap: 8px;
+    padding: 14px 18px;
     width: 100%;
     border: none;
     background-color: inherit;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .dashboard-nav:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #F4F2FF;
+    color: #211D45;
 }
 
 .dashboard-nav.active {
-    background-color: #3C5065;
+    background-color: #EEECFF;
+    color: #4235B8;
     position: relative;
 }
 
@@ -61,14 +69,14 @@
     content: "";
     position: absolute;
     left: 0;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background-color: #4CAF50;
+    background-color: #FF7A59;
 }
 
 .dashboard-profile {
     width: 100%;
-    border-top: 1px solid white;
+    border-top: 1px solid #EFEDFB;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,6 +84,12 @@
     padding: 15px;
     gap: 10px;
     cursor: pointer;
+    color: #4B4670;
+    transition: color 0.2s ease;
+}
+
+.dashboard-profile:hover {
+    color: #5B4EE5;
 }
 
 .librarian-page-container {
@@ -86,7 +100,7 @@
 }
 
 .book-list-head {
-    background-color: #F5F7FA;
+    background-color: #F4F2FF;
 }
 
 .book-actions {
@@ -95,7 +109,7 @@
 }
 
 .book-action {
-    border-radius: 5px;
+    border-radius: 8px;
     height: 30px;
     width: 30px;
     display: flex;
@@ -109,19 +123,19 @@
 }
 
 .book-action.view {
-    background-color: #FEA118;
+    background-color: #F5A623;
 }
 
 .book-action.edit {
-    background-color: #369FF3;
+    background-color: #5B4EE5;
 }
 
 .book-action.hide {
-    background-color: red;
+    background-color: #EF4467;
 }
 
 .book-action.unhide {
-    background-color: #41AB5D;
+    background-color: #16A672;
 }
 
 .book-action:hover {
@@ -129,7 +143,7 @@
 }
 
 .book-action.disabled{
-    background-color: gray;
+    background-color: #B7B2D6;
     cursor: default;
 }
 
@@ -137,17 +151,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 999px;
 }
 
 .book-status.active {
-    color: #2E7D32;
-    background-color: #E8F5E9;
+    color: #16A672;
+    background-color: #E7F9F1;
 }
 
 .book-status.hidden {
-    color: #C62828;
-    background-color: #FFEBEE;
+    color: #EF4467;
+    background-color: #FDE9EE;
 }
 
 .book-list-item {
@@ -165,16 +179,18 @@
 }
 
 .book-list-item.available::before {
-    background-color: green;
+    background-color: #16A672;
 }
 
 .book-list-item.unavailable::before {
-    background-color: red;
+    background-color: #EF4467;
 }
 
 .table-container{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(46, 42, 120, 0.12);
     height: fit-content;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .add-book-button{
@@ -182,13 +198,13 @@
 }
 
 .copy-condition.good{
-    color: #4CAF50;
+    color: #16A672;
 }
 .copy-condition.damaged{
-    color: red;
+    color: #EF4467;
 }
 .copy-condition.lost{
-    color: gray;
+    color: #9A94BE;
     text-decoration: line-through;
 }
 
@@ -206,5 +222,6 @@
 }
 
 .book-selector.selected{
-    background-color: #369FF3;
+    background-color: #5B4EE5;
+    color: white;
 }

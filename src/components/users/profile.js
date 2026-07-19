@@ -65,7 +65,7 @@ export default function Profile() {
 
     const handleSave = () => {
         if(!PhoneRegex.test(formData.phone)) {
-            alert("Số điện thoại phải đubsf chuẩn việt Nam bắt đầu bằng 0  và dủ 10 số")
+            alert("Số điện thoại phải đúng chuẩn Việt Nam, bắt đầu bằng 0 và đủ 10 số")
             return 
         }
         axios
